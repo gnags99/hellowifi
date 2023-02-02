@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matching Game</title>  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <h1>What is the order of your next steps</h1>
+  <p>The attacker has become impatient, went ahead and published the PII(Personally Identifiable Information) data into public pastebins.</p>
+  <p>Social media is flodded with public backlash</p>
+  <p>What is the order of your next steps ?</p>
+  <p>The options displayed on the left are the random order and the participants have to choose the right order by giving the order number on the right.</p>
+
+  <main class="container">
+    <div>
+      <ul class="draggable-list">
+        <li id="e1" draggable="true">Report this incident to CERT-In with basic information available.</li>
+        <li id="e2" draggable="true">Make a truthfull but firm statement.</li>
+        <li id="e3" draggable="true">Ensure CERT-In compliance through policy and logging.</li>
+        <li id="e4" draggable="true">Isolate all impacted networks and preserve system state.</li>
+        <li id="e5" draggable="true">Release funds for operations to be started on new infrastructure.</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="draggable-list">
+        <li id="s4" draggable="true">One </li>
+        <li id="s1" draggable="true">Two</li>
+        <li id="s5" draggable="true">Three</li>
+        <li id="s2" draggable="true">Four</li>
+        <li id="s3" draggable="true">Five</li>
+      </ul>
+    </div>
+  </main>
+
+  <div id="endMessage">
+    <h3>Well done!</h3>
+    
+    <table>
+      <tr>
+        <th>Options</th>
+        <th>Order</th>
+      </tr>
+      <tr>
+        <td>Isolate all impacted networks and preserve system state.</td>
+        <td>One</td>
+      </tr>
+      <tr>
+        <td>Report this incident to CERT-In with basic information available.</td>
+        <td>Two</td>
+      </tr>
+      <tr>
+        <td>Release funds for operations to be started on new infrastructure.</td>
+        <td>Three</td>
+      </tr>
+      <tr>
+        <td>Make a truthfull but firm statement.</td>
+        <td>Four</td>
+      </tr>
+      <tr>
+        <td>Ensure CERT-In compliance through policy and logging.</td>
+        <td>Five</td>
+      </tr>
+    </table>
+
+    <button onclick="playAgain()">Play Again</button>
+  </div>
+
+  <script src="script.js"></script>
+
+  
+</body>
+</html>

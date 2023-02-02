@@ -1,0 +1,152 @@
+HTML
+
+<div id="time"></div>
+<button id="start-button">Start</button>
+<button id="stop-button">Stop</button>
+<button id="reset-button">Reset</button>
+
+
+JS
+const time = document.getElementById("time");
+const startButton = document.getElementById("start-button");
+const stopButton = document.getElementById("stop-button");
+const resetButton = document.getElementById("reset-button");
+
+let hour = 1;
+let minute = 30;
+let second = 0;
+let intervalId;
+
+startButton.addEventListener("click", startTimer);
+stopButton.addEventListener("click", stopTimer);
+resetButton.addEventListener("click", resetTimer);
+
+function startTimer() {
+  intervalId = setInterval(countdown, 1000);
+  startButton.setAttribute("disabled", "true");
+  stopButton.removeAttribute("disabled");
+}
+
+function stopTimer() {
+  clearInterval(intervalId);
+  startButton.removeAttribute("disabled");
+  stopButton.setAttribute("disabled", "true");
+}
+
+function resetTimer() {
+  hour = 1;
+  minute = 30;
+  second = 0;
+  time.innerHTML = "01:30:00";
+  stopTimer();
+  startButton.removeAttribute("disabled");
+  stopButton.setAttribute("disabled", "true");
+}
+
+function countdown() {
+  second--;
+  if (second < 0) {
+    second = 59;
+    minute--;
+  }
+  if (minute < 0) {
+    minute = 59;
+    hour--;
+  }
+  if (hour < 0) {
+    clearInterval(intervalId);
+    time.innerHTML = "Time's up!";
+    startButton.setAttribute("disabled", "true");
+    stopButton.setAttribute("disabled", "true");
+  }
+  time.innerHTML = `${hour < 10 ? "0" + hour : hour}:${minute < 10 ? "0" + minute : minute}:${second < 10 ? "0" + second : second}`;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="timer">00:00:00</div>
+<button id="startBtn">Start</button>
+<button id="stopBtn">Stop</button>
+<button id="resetBtn">Reset</button>
+
+
+
+
+
+
+
+
+#timer {
+  font-size: 36px;
+  text-align: center;
+}
+
+button {
+  padding: 5px 10px;
+  margin: 5px;
+}
+
+
+
+
+
+
+
+
+
+var countDownDate = new Date().getTime() + (60 * 60 * 1000); // timer for 1 hour
+var x;
+var timerRunning = false;
+
+document.getElementById("startBtn").addEventListener("click", startTimer);
+document.getElementById("stopBtn").addEventListener("click", stopTimer);
+document.getElementById("resetBtn").addEventListener("click", resetTimer);
+
+function startTimer() {
+  if (!timerRunning) {
+    timerRunning = true;
+    x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("timer").innerHTML =
+        hours + ":" + minutes + ":" + seconds;
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "EXPIRED";
+        timerRunning = false;
+      }
+    }, 1000);
+  }
+}
+
+function stopTimer() {
+  if (timerRunning) {
+    clearInterval(x);
+    timerRunning = false;
+  }
+}
+
+function resetTimer() {
+  clearInterval(x);
+  timerRunning = false;
+  countDownDate = new Date().getTime() + (60 * 60 * 1000); // timer for 1 hour
+  document.getElementById("timer").innerHTML = "00:00:00";
+}
+
+

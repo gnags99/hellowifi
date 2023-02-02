@@ -1,0 +1,81 @@
+<!-- HTML -->
+<div id="timerContainer">
+  <p>Timer: <span id="timer"></span></p>
+  <p>Ransom Amount: <span id="ransomAmount">$500,000</span></p>
+  <button id="startBtn">Start</button>
+  <button id="stopBtn">Stop</button>
+  <button id="resetBtn">Reset</button>
+</div>
+
+
+
+
+<!-- CSS -->
+#timerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+
+
+const timer = document.querySelector("#timer");
+const ransomAmount = document.querySelector("#ransomAmount");
+const startBtn = document.querySelector("#startBtn");
+const stopBtn = document.querySelector("#stopBtn");
+const resetBtn = document.querySelector("#resetBtn");
+
+let interval;
+let totalTime = 3600;  // Total time in seconds, e.g. 3600 for 1 hour
+let time = totalTime;
+let ransom = 500000;
+
+startBtn.addEventListener("click", startTimer);
+stopBtn.addEventListener("click", stopTimer);
+resetBtn.addEventListener("click", resetTimer);
+
+function startTimer() {
+  interval = setInterval(function() {
+    if (time > 0) {
+      time--;
+      let hours = Math.floor(time / 3600);
+      let minutes = Math.floor((time % 3600) / 60);
+      let seconds = time % 60;
+  
+      let formattedTime = `${pad(hours, 2)}:${pad(minutes, 2)}:${pad(seconds, 2)}`;
+      timer.textContent = formattedTime;
+  
+      if (time % 10 === 0) {
+        ransom += 100000;
+        ransomAmount.textContent = `$${ransom}`;
+      }
+    } else {
+      stopTimer();
+    }
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(interval);
+}
+
+function resetTimer() {
+  stopTimer();
+  time = totalTime;
+  ransom = 500000;
+  let hours = Math.floor(time / 3600);
+  let minutes = Math.floor((time % 3600) / 60);
+  let seconds = time % 60;
+  let formattedTime = `${pad(hours, 2)}:${pad(minutes, 2)}:${pad(seconds, 2)}`;
+  timer.textContent = formattedTime;
+  ransomAmount.textContent = `$${ransom}`;
+}
+
+function pad(num, size) {
+  let s = num + "";
+  while (s.length < size) s = "0" + s;
+  return s;
+}
