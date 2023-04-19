@@ -103,4 +103,91 @@
 	</script>
 </body>
 </html>
-
+----------------------------------------Mathch the following --------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Table with Input Fields Example</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		th, td {
+			border: 1px solid black;
+			padding: 10px;
+			text-align: center;
+		}
+		input[type="text"] {
+			width: 100%;
+			box-sizing: border-box;
+			padding: 5px;
+			font-size: 16px;
+			border: none;
+			border-radius: 5px;
+			background-color: #F2F2F2;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>Column 1</th>
+			<th>Column 2 (Input Field)</th>
+			<th>Column 3 (Input Field)</th>
+		</tr>
+		<tr>
+			<td>Row 1, Column 1</td>
+			<td><input type="text" placeholder="Enter text here"></td>
+			<td><input type="text" placeholder="Enter text here"></td>
+		</tr>
+		<tr>
+			<td>Row 2, Column 1</td>
+			<td><input type="text" placeholder="Enter text here"></td>
+			<td><input type="text" placeholder="Enter text here"></td>
+		</tr>
+		<tr>
+			<td>Row 3, Column 1</td>
+			<td><input type="text" placeholder="Enter text here"></td>
+			<td><input type="text" placeholder="Enter text here"></td>
+		</tr>
+		<tr>
+			<td>Row 4, Column 1</td>
+				<td><input type="text" placeholder="Enter text here"></td>
+			<td><input type="text" placeholder="Enter text here"></td>
+		</tr>
+		<tr>
+			<td>Row 5, Column 1</td>
+				<td><input type="text" placeholder="Enter text here"></td>
+			<td><input type="text" placeholder="Enter text here"></td>
+		</tr>
+		<tr>
+			<td>Row 6, Column 1</td>
+				<td><input type="text" placeholder="Enter text here"></td>
+			<td><input type="text" placeholder="Enter text here"></td>
+		</tr>
+		<tr>
+			<td>Row 7, Column 1</td>
+				<td><input type="text" placeholder="Enter text here"></td>
+			<td><input type="text" placeholder="Enter text here"></td>
+		</tr>
+		<tr>
+			<td>Row 8, Column 1</td>
+				<td><input type="text" placeholder="Enter text here"></td>
+			<td><input type="text" placeholder="Enter text here"></td>
+		</tr>
+		<tr>
+			<td>Row 9, Column 1</td>
+				<td><input type="text" placeholder="Enter text here"></td>
+			<td><input type="text" placeholder="Enter text here"></td>
+		</tr>
+		<tr>
+			<td>Row 10, Column 1</td>
+				<td><input type="text" placeholder="Enter text here"></td>
+		
+<td><input type="text" placeholder="Enter text here"></td>
+		</tr>
+	</table>
+</body>
+</html>
